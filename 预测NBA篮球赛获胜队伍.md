@@ -3,9 +3,11 @@
 - 决策树与随机森林
 - 集成学习概念
 
+代码另附，下面只记录一些功能性的函数与概念。
+
 **1.数据加载与处理**
  csv文件：以逗号分隔的文本格式的数据文件；
- 加载csv文件
+ **加载csv文件**
  ```Python
  import pandas as pd
  dataset = pd.read_csv(data_filename)
@@ -13,3 +15,9 @@
  返回的数据类型为dataframe 可以向npy转换
  '''
  ```
+ **数据清洗**
+ - 把字符串格式的日期变为数字表示的日期对象
+ ```Python
+ results = pd.read_csv(data_filename, parse_dates=['Date'])  # 第二个参数表示以数字日期格式读取日期数据
+ ```
+ 
