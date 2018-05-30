@@ -21,3 +21,20 @@
  results = pd.read_csv(data_filename, parse_dates=['Date'])  # 第二个参数表示以数字日期格式读取日期数据
  ```
  
+**2.one hot 编码**
+
+one hot编码称为独热编码，有多少个状态就有多少比特，且每个编码只有一个比特为1
+
+使用sklearn模块里的onehotencoder转换器把整数转换为二进制数字
+
+**由以下案例可以看出来onehot编码会按照原始数据的大小进行排序，有多少数据就会有多少比特位，然后从低位到高位依次出现1**
+
+```Python
+onehot = OneHotEncoder()
+res = onehot.fit_transform(np.array([1,2,3,4,5,6]).reshape(-1,2)).todense()
+res
+>>>
+matrix([[1., 0., 0., 1., 0., 0.],
+        [0., 1., 0., 0., 1., 0.],
+        [0., 0., 1., 0., 0., 1.]])
+```
