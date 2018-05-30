@@ -38,3 +38,16 @@ matrix([[1., 0., 0., 1., 0., 0.],
         [0., 1., 0., 0., 1., 0.],
         [0., 0., 1., 0., 0., 1.]])
 ```
+
+**2.字符串的整型数编码**
+
+```Python
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+para=['a', 'b', 'c']
+encoding = LabelEncoder()  # 把字符串类型转化为整型
+encoding_result = encoding.fit_transform(para)  # para为字符串列表
+print(encoding_result)
+>>>
+[0 1 2]
+```
+
